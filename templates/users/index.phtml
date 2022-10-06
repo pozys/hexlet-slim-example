@@ -1,0 +1,12 @@
+<form method="get">
+    <input type="text" name="username" value="<?= htmlspecialchars($username) ?>">
+    <button type="submit">Search</button>
+    <hr>
+    <ul>
+        <?php foreach ($users as $user) : ?>
+            <li>
+                <a href="/users/<?= htmlspecialchars($user->id) ?>"><?= htmlspecialchars($user->nickname) ?></a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</form>
