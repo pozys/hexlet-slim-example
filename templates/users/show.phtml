@@ -1,2 +1,11 @@
-<p>id = <?= htmlspecialchars($id) ?></p>
-<p>nickname = <?= htmlspecialchars($nickname) ?></p>
+<?php foreach ($user as $key => $value) : ?>
+    <div>
+        <?= $key ?>: <?= htmlspecialchars($value) ?>
+    </div>
+<?php endforeach; ?>
+<a href="/users/<?= htmlspecialchars($user['id']) ?>/edit">Update</a>
+
+<form action="/users/<?= htmlspecialchars($user['id']) ?>" method="post">
+    <input type="hidden" name="_METHOD" value="DELETE">
+    <input type="submit" value="Delete">
+</form>
